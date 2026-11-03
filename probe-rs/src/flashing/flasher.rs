@@ -921,6 +921,8 @@ impl<O: Operation> ActiveFlasher<'_, '_, O> {
         };
 
         let address = self.flash_algorithm.flash_properties.address_range.start;
+        tracing::warn!("Address start {}", address);
+
         let error_code = self
             .call_function_and_wait(
                 &Registers {
